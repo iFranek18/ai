@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI w Messenger - Gemini</title>
+    <link rel="shortcut icon" href="https://www.google.com/favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --primary-blue: #0084ff;
+            --ai-gradient: linear-gradient(135deg, #4285f4, #9b51e0, #e91e63);
+            --dark-bg: #050a14;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Tło imitujące serwerownię */
+        .server-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(20, 30, 60, 0.8), var(--dark-bg)),
+                url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            opacity: 0.6;
+        }
+
+        /* Procesor AI */
+        .cpu-core {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            border: 2px solid rgba(66, 133, 244, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(66, 133, 244, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10, 20, 40, 0.9);
+        }
+
+        .cpu-text {
+            font-size: 60px;
+            font-weight: bold;
+            background: var(--ai-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(155, 81, 224, 0.5));
+            letter-spacing: 5px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .highlight {
+            color: var(--primary-blue);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 40px 0;
+            line-height: 1.6;
+            text-align: left;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .glass-card p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #e0e0e0;
+        }
+
+        .gemini-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 50px;
+            background: var(--ai-gradient);
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-add {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            text-decoration: none; /* Usuwa podkreślenie linku */
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 132, 255, 0.4);
+            margin-top: 20px;
+        }
+
+        .btn-add:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 132, 255, 0.6);
+            background-color: #0077e6;
+        }
+
+        /* Animacje obwodów */
+        .circuit-lines {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(66, 133, 244, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(66, 133, 244, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -2;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.2rem; }
+            .cpu-core { width: 200px; height: 200px; }
+            .cpu-text { font-size: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="circuit-lines"></div>
+    <div class="server-background"></div>
+
+    <div class="cpu-core" style="opacity: 0.3; top: 20%; pointer-events: none;">
+        <div class="cpu-text">AI</div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="gemini-badge">POWERED BY GEMINI</div>
+            <h1>AI w <span class="highlight">Messenger</span></h1>
+        </header>
+
+        <main>
+            <div class="glass-card">
+                <p><strong>Twoja cyfrowa obecność, nawet gdy jesteś offline.</strong></p>
+                <p>Nasz zaawansowany system personalizacji analizuje Twoje wcześniejsze interakcje, styl wypowiedzi oraz sposób komunikacji z każdym czatem z osobna. Dzięki temu AI tworzy unikalny profil dla każdego z Twoich znajomych.</p>
+                
+                <p><strong>Co możesz przekazać Gemini?</strong></p>
+                <ul style="color: #4285f4; list-style-type: square; padding-left: 20px;">
+                    <li>Plan dnia i godziny lekcji/pracy</li>
+                    <li>Terminy zajęć dodatkowych i treningów</li>
+                    <li>Plany na weekend i wyjazdy</li>
+                    <li>Twoje preferencje i typowe odpowiedzi</li>
+                </ul>
+
+                <p>Gdy nie będziesz aktywny, AI inteligentnie odpowie na pytania o Twoją dostępność, skomentuje przesłane rolki oraz przeanalizuje linki w Twoim imieniu – wszystko w Twoim stylu, bazując na silniku <strong>Gemini</strong>.</p>
+            </div>
+
+            <a href="logowanie.html" class="btn-add">
+                DODAJ AI DO KONTA MESSENGER
+            </a>
+            </main>
+    </div>
+
+</body>
+</html>
